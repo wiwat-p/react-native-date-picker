@@ -1,32 +1,23 @@
 {
-  "name": "react-native-date-picker",
-  "version": "3.2.7",
-  "description": "A Cross Platform React Native Picker",
+  "name": "wcchimiiz-buddhist-calendar",
+  "version": "0.0.4",
+  "description": "Buddhist calendar",
   "main": "src/index.js",
   "scripts": {
-    "prepublishOnly": "mv README.md githubREADME.md && mv npmREADME.md README.md",
-    "postpublish": "mv README.md npmREADME.md && mv githubREADME.md README.md",
-    "test": "jest src"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:henninghall/react-native-date-picker.git"
+    "url": "git@github.com/wiwat-p/react-native-date-picker.git"
   },
-  "author": "henninghall",
-  "license": "MIT",
-  "homepage": "https://github.com/henninghall/react-native-date-picker",
+  "author": "Wiwat Patanaprasitchai",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/wiwat-p/react-native-date-picker/issues"
+  },
+  "homepage": "https://github.com/wiwat-p/react-native-date-picker#readme",
   "keywords": [
-    "datepicker",
-    "date-picker",
-    "date picker",
-    "datepicker",
-    "react native",
-    "react native date picker",
-    "react native datepicker",
-    "react native datetimepicker",
-    "react native date time picker",
-    "react-native",
-    "react-native-date-picker"
+    "datepicker"
   ],
   "dependencies": {},
   "devDependencies": {
