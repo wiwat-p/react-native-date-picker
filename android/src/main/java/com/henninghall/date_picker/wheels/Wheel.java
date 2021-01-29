@@ -8,6 +8,9 @@ import com.henninghall.date_picker.pickers.Picker;
 import com.henninghall.date_picker.State;
 
 import java.text.SimpleDateFormat;
+import java.time.ZoneId;
+import java.time.chrono.ThaiBuddhistDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
@@ -41,7 +44,9 @@ public abstract class Wheel {
 
     private int getIndexOfDate(Calendar date){
         format.setTimeZone(state.getTimeZone());
-        return values.indexOf(format.format(date.getTime()));
+        Calendar newDate = Calendar.getInstance();
+        newDate.set(date.get(Calendar.YEAR),date.get(Calendar.MONTH),date.get(Calendar.DATE));
+        return values.indexOf(format.format(newDate.getTime()));
     }
 
     public void animateToDate(Calendar date) {
@@ -91,7 +96,7 @@ public abstract class Wheel {
         return toDisplayValue(getValueAtIndex(getIndex()));
     }
 
-    private String[] getDisplayValues(ArrayList<String> values){
+    protected String[] getDisplayValues(ArrayList<String> values){
         ArrayList<String> displayValues = new ArrayList<>();
         for (String value: values) {
             displayValues.add(this.toDisplayValue(value));

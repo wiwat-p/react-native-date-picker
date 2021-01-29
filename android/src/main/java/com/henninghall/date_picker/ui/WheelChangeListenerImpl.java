@@ -55,7 +55,7 @@ public class WheelChangeListenerImpl implements WheelChangeListener {
         if (minDate != null && selectedDate.before(minDate)) {
             uiManager.animateToDate(minDate);
             return;
-        }
+            }
 
         Calendar maxDate = state.getMaximumDate();
         if (maxDate != null && selectedDate.after(maxDate)) {

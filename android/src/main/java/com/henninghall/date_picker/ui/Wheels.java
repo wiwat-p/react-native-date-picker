@@ -123,8 +123,14 @@ public class Wheels {
             Wheel w = wheels.get(i);
             if (w instanceof DateWheel) {
                 sb.append(w.getPastValue(daysToSubtract));
+            } else {
+                if (w.getClass().getName().contains("YearWheel")) {
+                    int yearInt = Integer.parseInt(w.getValue());
+                    sb.append(yearInt);
+                } else {
+                    sb.append(w.getValue());
+                }
             }
-            else sb.append(w.getValue());
         }
         return sb.toString();
     }
@@ -133,6 +139,7 @@ public class Wheels {
         if(state.getMode() == Mode.date ){
             return getDateModeString(daysToSubtract);
         }
+
         return dayWheel.getValue();
     }
 
@@ -149,7 +156,13 @@ public class Wheels {
     String getDisplayValue() {
         StringBuilder sb = new StringBuilder();
         for (Wheel wheel: getOrderedVisibleWheels()) {
-            sb.append(wheel.getDisplayValue());
+            if (wheel.getClass().getName().contains("YearWheel")) {
+                int yearInt = Integer.parseInt(wheel.getDisplayValue());
+                yearInt = yearInt - 543;
+                sb.append(yearInt);
+            } else {
+                sb.append(wheel.getDisplayValue());
+            }
         }
         return sb.toString();
     }
